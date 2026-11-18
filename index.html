@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Foco: temporizador Pomodoro y lista de tareas de estudio que funciona sin conexión.">
+  <meta name="theme-color" content="#1b1b2f">
+  <title>Foco · Temporizador de estudio</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1><span aria-hidden="true">●</span> Foco</h1>
+    <p id="red" class="red" role="status">Conectado</p>
+  </header>
+
+  <main class="grid">
+    <section class="panel reloj" aria-labelledby="t-reloj">
+      <h2 id="t-reloj">Sesión</h2>
+      <div class="modos" role="group" aria-label="Tipo de sesión">
+        <button type="button" class="modo activo" data-min="25" aria-pressed="true">Enfoque 25</button>
+        <button type="button" class="modo" data-min="5" aria-pressed="false">Pausa 5</button>
+        <button type="button" class="modo" data-min="15" aria-pressed="false">Pausa 15</button>
+      </div>
+      <p id="tiempo" class="tiempo" aria-live="off">25:00</p>
+      <div class="progreso" aria-hidden="true"><div id="barra"></div></div>
+      <div class="controles">
+        <button type="button" id="iniciar" class="btn principal">Iniciar</button>
+        <button type="button" id="reiniciar" class="btn">Reiniciar</button>
+      </div>
+      <p id="aviso" class="aviso" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="t-tareas">
+      <h2 id="t-tareas">Tareas de estudio</h2>
+      <form id="form-tarea" class="form">
+        <label for="nueva" class="sr">Nueva tarea</label>
+        <input id="nueva" type="text" maxlength="80" placeholder="Ej.: Leer capítulo 2 de Tamrakar" required>
+        <button type="submit" class="btn principal">Añadir</button>
+      </form>
+      <ul id="tareas" class="tareas"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="t-stats">
+      <h2 id="t-stats">Hoy</h2>
+      <dl class="stats">
+        <div><dt>Sesiones de enfoque</dt><dd id="s-sesiones">0</dd></div>
+        <div><dt>Minutos enfocado</dt><dd id="s-minutos">0</dd></div>
+        <div><dt>Tareas completadas</dt><dd id="s-tareas">0</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="pie">
+    PWA del Laboratorio 7 · Cloud Computing · Nicolas Andres Ramirez Jarava · UMB 2026
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
