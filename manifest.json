@@ -1,0 +1,17 @@
+{
+  "name": "Foco · Temporizador de estudio",
+  "short_name": "Foco",
+  "description": "Temporizador Pomodoro y lista de tareas de estudio que funciona sin conexión.",
+  "lang": "es-CO",
+  "id": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1b1b2f",
+  "theme_color": "#1b1b2f",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
